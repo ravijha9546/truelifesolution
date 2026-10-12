@@ -1,1 +1,26 @@
-export default function Terms(){return <section className="container max-w-3xl py-36"><p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Legal</p><h1 className="mt-3 text-5xl font-black">Terms & Conditions</h1><div className="mt-10 space-y-7 text-sm leading-8 text-slate-400"><p>This starter terms page is a placeholder and should be reviewed by qualified legal counsel before publication.</p><h2 className="text-xl font-bold text-white">Website use</h2><p>Use of this website is subject to applicable laws and the final terms published by True Life Solution.</p><h2 className="text-xl font-bold text-white">No guarantee</h2><p>Website content does not guarantee eligibility, approval, pricing, coverage, or availability of any product or service.</p></div></section>}
+export default function Terms() {
+  return (
+    <section className="container max-w-3xl py-36">
+      <p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">
+        Legal
+      </p>
+      <h1 className="mt-3 text-5xl font-black">Terms & Conditions</h1>
+      <div className="mt-10 space-y-7 text-sm leading-8 text-slate-400">
+        <p>
+          This starter terms page is a placeholder and should be reviewed by
+          qualified legal counsel before publication.
+        </p>
+        <h2 className="text-xl font-bold text-white">Website use</h2>
+        <p>
+          Use of this website is subject to applicable laws and the final terms
+          published by True Life Solution.
+        </p>
+        <h2 className="text-xl font-bold text-white">No guarantee</h2>
+        <p>
+          Website content does not guarantee eligibility, approval, pricing,
+          coverage, or availability of any product or service.
+        </p>
+      </div>
+    </section>
+  );
+}

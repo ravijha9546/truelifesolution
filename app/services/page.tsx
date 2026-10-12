@@ -1,2 +1,23 @@
-import CampaignCard from '@/components/CampaignCard';import {campaigns} from '@/lib/campaigns';
-export default function Services(){return <section className="container py-36"><p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Services</p><h1 className="mt-3 max-w-3xl text-5xl font-black md:text-6xl">Campaigns built around real consumer needs.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">Explore the campaign verticals currently represented by True Life Solution.</p><div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{campaigns.map(c=><CampaignCard key={c.slug} c={c}/>)}</div></section>}
+import CampaignCard from "@/components/CampaignCard";
+import { campaigns } from "@/lib/campaigns";
+export default function Services() {
+  return (
+    <section className="container py-36">
+      <p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">
+        Services
+      </p>
+      <h1 className="mt-3 max-w-3xl text-5xl font-black md:text-6xl">
+        Campaigns built around real consumer needs.
+      </h1>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+        Explore the campaign verticals currently represented by True Life
+        Solution.
+      </p>
+      <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {campaigns.map((c) => (
+          <CampaignCard key={c.slug} c={c} />
+        ))}
+      </div>
+    </section>
+  );
+}

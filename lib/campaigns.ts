@@ -1,10 +1,135 @@
-export type Campaign={slug:string;name:string;short:string;description:string;icon:string;accent:string;benefits:string[];faqs:string[]}
-export const campaigns:Campaign[]=[
-{slug:'pest-control',name:'Pest Control',short:'Protect your home from unwanted pests.',description:'Connect homeowners with qualified pest-control professionals for inspections, treatments, and ongoing protection.',icon:'⌁',accent:'#57e6a8',benefits:['Home pest inspections','Treatment options','Local service matching','Fast response pathways'],faqs:['What pests can be treated?','How quickly can a professional respond?','Do you cover residential properties?']},
-{slug:'auto-insurance',name:'Auto Insurance',short:'Explore vehicle coverage options.',description:'Help consumers connect with insurance professionals to explore coverage that fits their vehicle and situation.',icon:'◈',accent:'#6ea8ff',benefits:['Coverage inquiries','Quote-request pathways','Licensed-agent connections','Multiple vehicle needs'],faqs:['What information is needed for a quote?','Can I request coverage for multiple vehicles?','Are rates guaranteed?']},
-{slug:'ssdi',name:'SSDI',short:'Information and assistance for disability benefits.',description:'Provide a clear path for people seeking information about Social Security Disability Insurance and potential assistance.',icon:'✦',accent:'#c084fc',benefits:['Eligibility information','Benefit guidance','Assistance pathways','Simple intake experience'],faqs:['What is SSDI?','Who may qualify?','What information is useful for an initial inquiry?']},
-{slug:'water-damage',name:'Water Damage',short:'Get connected with restoration professionals.',description:'Help property owners find restoration services after leaks, flooding, or other water-related property damage.',icon:'≈',accent:'#38d5ff',benefits:['Emergency restoration inquiries','Water extraction','Drying and mitigation','Property restoration'],faqs:['What should I do after water damage?','Can restoration begin quickly?','What areas can professionals service?']},
-{slug:'final-expense',name:'Final Expense',short:'Explore final-expense coverage information.',description:'Connect consumers with insurance professionals who can explain final-expense coverage and available options.',icon:'◇',accent:'#fbbf24',benefits:['Coverage information','Agent connections','Simple inquiry flow','Personalized discussions'],faqs:['What is final-expense insurance?','Who is it designed for?','How does the inquiry process work?']},
-{slug:'health-insurance',name:'Health Insurance',short:'Explore health coverage options.',description:'Provide consumers with a pathway to learn about available health-insurance options through appropriate professionals.',icon:'＋',accent:'#fb7185',benefits:['Coverage inquiries','Plan information','Professional assistance','Simple intake'],faqs:['What information is needed?','Can plans vary by location?','Who can explain available options?']}
-]
-export function getCampaign(slug:string){return campaigns.find(c=>c.slug===slug)}
+export type Campaign = {
+  slug: string;
+  name: string;
+  short: string;
+  description: string;
+  icon: string;
+  accent: string;
+  benefits: string[];
+  faqs: string[];
+};
+export const campaigns: Campaign[] = [
+  {
+    slug: "pest-control",
+    name: "Pest Control",
+    short: "Protect your home from unwanted pests.",
+    description:
+      "Connect homeowners with qualified pest-control professionals for inspections, treatments, and ongoing protection.",
+    icon: "⌁",
+    accent: "#57e6a8",
+    benefits: [
+      "Home pest inspections",
+      "Treatment options",
+      "Local service matching",
+      "Fast response pathways",
+    ],
+    faqs: [
+      "What pests can be treated?",
+      "How quickly can a professional respond?",
+      "Do you cover residential properties?",
+    ],
+  },
+  {
+    slug: "auto-insurance",
+    name: "Auto Insurance",
+    short: "Explore vehicle coverage options.",
+    description:
+      "Help consumers connect with insurance professionals to explore coverage that fits their vehicle and situation.",
+    icon: "◈",
+    accent: "#6ea8ff",
+    benefits: [
+      "Coverage inquiries",
+      "Quote-request pathways",
+      "Licensed-agent connections",
+      "Multiple vehicle needs",
+    ],
+    faqs: [
+      "What information is needed for a quote?",
+      "Can I request coverage for multiple vehicles?",
+      "Are rates guaranteed?",
+    ],
+  },
+  {
+    slug: "ssdi",
+    name: "SSDI",
+    short: "Information and assistance for disability benefits.",
+    description:
+      "Provide a clear path for people seeking information about Social Security Disability Insurance and potential assistance.",
+    icon: "✦",
+    accent: "#c084fc",
+    benefits: [
+      "Eligibility information",
+      "Benefit guidance",
+      "Assistance pathways",
+      "Simple intake experience",
+    ],
+    faqs: [
+      "What is SSDI?",
+      "Who may qualify?",
+      "What information is useful for an initial inquiry?",
+    ],
+  },
+  {
+    slug: "water-damage",
+    name: "Water Damage",
+    short: "Get connected with restoration professionals.",
+    description:
+      "Help property owners find restoration services after leaks, flooding, or other water-related property damage.",
+    icon: "≈",
+    accent: "#38d5ff",
+    benefits: [
+      "Emergency restoration inquiries",
+      "Water extraction",
+      "Drying and mitigation",
+      "Property restoration",
+    ],
+    faqs: [
+      "What should I do after water damage?",
+      "Can restoration begin quickly?",
+      "What areas can professionals service?",
+    ],
+  },
+  {
+    slug: "final-expense",
+    name: "Final Expense",
+    short: "Explore final-expense coverage information.",
+    description:
+      "Connect consumers with insurance professionals who can explain final-expense coverage and available options.",
+    icon: "◇",
+    accent: "#fbbf24",
+    benefits: [
+      "Coverage information",
+      "Agent connections",
+      "Simple inquiry flow",
+      "Personalized discussions",
+    ],
+    faqs: [
+      "What is final-expense insurance?",
+      "Who is it designed for?",
+      "How does the inquiry process work?",
+    ],
+  },
+  {
+    slug: "health-insurance",
+    name: "Health Insurance",
+    short: "Explore health coverage options.",
+    description:
+      "Provide consumers with a pathway to learn about available health-insurance options through appropriate professionals.",
+    icon: "＋",
+    accent: "#fb7185",
+    benefits: [
+      "Coverage inquiries",
+      "Plan information",
+      "Professional assistance",
+      "Simple intake",
+    ],
+    faqs: [
+      "What information is needed?",
+      "Can plans vary by location?",
+      "Who can explain available options?",
+    ],
+  },
+];
+export function getCampaign(slug: string) {
+  return campaigns.find((c) => c.slug === slug);
+}
