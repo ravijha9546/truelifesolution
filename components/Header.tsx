@@ -1,3 +1,76 @@
-'use client';
-import Link from 'next/link';import {useState} from 'react';import {Menu,X} from 'lucide-react';
-export default function Header(){const [open,setOpen]=useState(false);return <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#050914]/75 backdrop-blur-xl"><div className="container flex h-20 items-center justify-between"><Link href="/" className="flex items-center gap-3" onClick={()=>setOpen(false)}><span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-cyan-300 to-blue-600 font-black text-slate-950">TL</span><span className="font-bold tracking-tight">TRUE LIFE <span className="text-cyan-300">SOLUTION</span></span></Link><nav className="hidden items-center gap-7 md:flex"><Link href="/services" className="text-sm text-slate-300 hover:text-white">Services</Link><Link href="/about" className="text-sm text-slate-300 hover:text-white">About</Link><Link href="/partners" className="text-sm text-slate-300 hover:text-white">Partners</Link><Link href="/contact" className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-slate-950 hover:bg-cyan-100">Talk to us</Link></nav><button className="md:hidden" onClick={()=>setOpen(!open)} aria-label="Menu">{open?<X/>:<Menu/>}</button></div>{open&&<div className="container border-t border-white/10 py-5 md:hidden"><div className="flex flex-col gap-5"><Link href="/services" onClick={()=>setOpen(false)}>Services</Link><Link href="/about" onClick={()=>setOpen(false)}>About</Link><Link href="/partners" onClick={()=>setOpen(false)}>Partners</Link><Link href="/contact" onClick={()=>setOpen(false)}>Contact</Link></div></div>}</header>}
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#050914]/75 backdrop-blur-xl">
+      <div className="container flex h-20 items-center justify-between">
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-cyan-300 to-blue-600 font-black text-slate-950">
+            TL
+          </span>
+          <span className="font-bold tracking-tight">
+            TRUE LIFE <span className="text-cyan-300">SOLUTION</span>
+          </span>
+        </Link>
+        <nav className="hidden items-center gap-7 md:flex">
+          <Link
+            href="/services"
+            className="text-sm text-slate-300 hover:text-white"
+          >
+            Services
+          </Link>
+          <Link
+            href="/about"
+            className="text-sm text-slate-300 hover:text-white"
+          >
+            About
+          </Link>
+          <Link
+            href="/partners"
+            className="text-sm text-slate-300 hover:text-white"
+          >
+            Partners
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-slate-950 hover:bg-cyan-100"
+          >
+            Talk to us
+          </Link>
+        </nav>
+        <button
+          className="md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
+      {open && (
+        <div className="container border-t border-white/10 py-5 md:hidden">
+          <div className="flex flex-col gap-5">
+            <Link href="/services" onClick={() => setOpen(false)}>
+              Services
+            </Link>
+            <Link href="/about" onClick={() => setOpen(false)}>
+              About
+            </Link>
+            <Link href="/partners" onClick={() => setOpen(false)}>
+              Partners
+            </Link>
+            <Link href="/contact" onClick={() => setOpen(false)}>
+              Contact
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}

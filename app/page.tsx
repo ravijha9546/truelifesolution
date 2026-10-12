@@ -1,2 +1,158 @@
-import Link from 'next/link';import {ArrowRight,ShieldCheck,Workflow,Users,CheckCircle2} from 'lucide-react';import Orb from '@/components/Orb';import CampaignCard from '@/components/CampaignCard';import {campaigns} from '@/lib/campaigns';
-export default function Home(){return <><section className="grid-bg relative overflow-hidden pt-32"><div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[120px]"/><div className="container grid min-h-[760px] items-center gap-10 lg:grid-cols-2"><div><div className="mb-6 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/5 px-4 py-2 text-xs font-bold uppercase tracking-[.2em] text-cyan-300">US Campaign Solutions</div><h1 className="max-w-3xl text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">Real people.<br/><span className="text-gradient">Real solutions.</span></h1><p className="mt-7 max-w-xl text-lg leading-8 text-slate-400">True Life Solution builds high-quality campaign experiences that connect consumers with the services they are looking for across the United States.</p><div className="mt-9 flex flex-wrap gap-4"><Link href="/services" className="group rounded-full bg-white px-6 py-3.5 font-bold text-slate-950">Explore services <ArrowRight className="ml-2 inline h-4 w-4 transition group-hover:translate-x-1"/></Link><Link href="/partners" className="rounded-full border border-white/15 px-6 py-3.5 font-bold hover:bg-white/5">Partner with us</Link></div><div className="mt-12 flex gap-8 text-sm text-slate-400"><span><b className="block text-xl text-white">6+</b>Campaign verticals</span><span><b className="block text-xl text-white">US</b>Market focus</span><span><b className="block text-xl text-white">24/7</b>Digital intake</span></div></div><Orb/></div></section><section className="py-24"><div className="container"><div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Our campaigns</p><h2 className="mt-3 text-4xl font-black">One platform. Multiple needs.</h2></div><Link href="/services" className="text-sm font-bold text-slate-300 hover:text-cyan-300">View all services →</Link></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{campaigns.map(c=><CampaignCard key={c.slug} c={c}/>)}</div></div></section><section className="border-y border-white/10 bg-white/[.02] py-24"><div className="container grid gap-12 lg:grid-cols-2"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Why True Life</p><h2 className="mt-3 text-4xl font-black leading-tight">Designed for trust, clarity and scale.</h2><p className="mt-5 max-w-xl leading-7 text-slate-400">We create simple customer journeys and structured campaign operations so every interaction is easy to understand and every partner has a clear path forward.</p></div><div className="grid gap-4 sm:grid-cols-2"><div className="glass rounded-3xl p-6"><ShieldCheck className="mb-5 text-cyan-300"/><h3 className="font-bold">Trust-first</h3><p className="mt-2 text-sm leading-6 text-slate-400">Clear messaging and responsible customer journeys.</p></div><div className="glass rounded-3xl p-6"><Workflow className="mb-5 text-cyan-300"/><h3 className="font-bold">Built to scale</h3><p className="mt-2 text-sm leading-6 text-slate-400">Flexible campaign infrastructure and workflows.</p></div><div className="glass rounded-3xl p-6"><Users className="mb-5 text-cyan-300"/><h3 className="font-bold">Human connection</h3><p className="mt-2 text-sm leading-6 text-slate-400">Digital experiences designed around real people.</p></div><div className="glass rounded-3xl p-6"><CheckCircle2 className="mb-5 text-cyan-300"/><h3 className="font-bold">Clear process</h3><p className="mt-2 text-sm leading-6 text-slate-400">Structured intake from first click to next step.</p></div></div></div></section><section className="py-24"><div className="container overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-gradient-to-br from-cyan-400/10 via-blue-500/5 to-transparent p-8 md:p-14"><div className="max-w-3xl"><p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Let’s connect</p><h2 className="mt-3 text-4xl font-black md:text-5xl">Have a campaign in mind?</h2><p className="mt-5 leading-7 text-slate-400">Tell us what you are building, the market you serve, and the kind of customer journey you need.</p><Link href="/contact" className="mt-8 inline-block rounded-full bg-cyan-300 px-7 py-3.5 font-bold text-slate-950">Start a conversation</Link></div></div></section></>}
+import Link from "next/link";
+import {
+  ArrowRight,
+  ShieldCheck,
+  Workflow,
+  Users,
+  CheckCircle2,
+} from "lucide-react";
+import Orb from "@/components/Orb";
+import CampaignCard from "@/components/CampaignCard";
+import { campaigns } from "@/lib/campaigns";
+export default function Home() {
+  return (
+    <>
+      <section className="grid-bg relative overflow-hidden pt-32">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[120px]" />
+        <div className="container grid min-h-[760px] items-center gap-10 lg:grid-cols-2">
+          <div>
+            <div className="mb-6 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/5 px-4 py-2 text-xs font-bold uppercase tracking-[.2em] text-cyan-300">
+              US Campaign Solutions
+            </div>
+            <h1 className="max-w-3xl text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
+              Real people.
+              <br />
+              <span className="text-gradient">Real solutions.</span>
+            </h1>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-slate-400">
+              True Life Solution builds high-quality campaign experiences that
+              connect consumers with the services they are looking for across
+              the United States.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link
+                href="/services"
+                className="group rounded-full bg-white px-6 py-3.5 font-bold text-slate-950"
+              >
+                Explore services{" "}
+                <ArrowRight className="ml-2 inline h-4 w-4 transition group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/partners"
+                className="rounded-full border border-white/15 px-6 py-3.5 font-bold hover:bg-white/5"
+              >
+                Partner with us
+              </Link>
+            </div>
+            <div className="mt-12 flex gap-8 text-sm text-slate-400">
+              <span>
+                <b className="block text-xl text-white">6+</b>Campaign verticals
+              </span>
+              <span>
+                <b className="block text-xl text-white">US</b>Market focus
+              </span>
+              <span>
+                <b className="block text-xl text-white">24/7</b>Digital intake
+              </span>
+            </div>
+          </div>
+          <Orb />
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="container">
+          <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">
+                Our campaigns
+              </p>
+              <h2 className="mt-3 text-4xl font-black">
+                One platform. Multiple needs.
+              </h2>
+            </div>
+            <Link
+              href="/services"
+              className="text-sm font-bold text-slate-300 hover:text-cyan-300"
+            >
+              View all services →
+            </Link>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {campaigns.map((c) => (
+              <CampaignCard key={c.slug} c={c} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="border-y border-white/10 bg-white/[.02] py-24">
+        <div className="container grid gap-12 lg:grid-cols-2">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">
+              Why True Life
+            </p>
+            <h2 className="mt-3 text-4xl font-black leading-tight">
+              Designed for trust, clarity and scale.
+            </h2>
+            <p className="mt-5 max-w-xl leading-7 text-slate-400">
+              We create simple customer journeys and structured campaign
+              operations so every interaction is easy to understand and every
+              partner has a clear path forward.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="glass rounded-3xl p-6">
+              <ShieldCheck className="mb-5 text-cyan-300" />
+              <h3 className="font-bold">Trust-first</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-400">
+                Clear messaging and responsible customer journeys.
+              </p>
+            </div>
+            <div className="glass rounded-3xl p-6">
+              <Workflow className="mb-5 text-cyan-300" />
+              <h3 className="font-bold">Built to scale</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-400">
+                Flexible campaign infrastructure and workflows.
+              </p>
+            </div>
+            <div className="glass rounded-3xl p-6">
+              <Users className="mb-5 text-cyan-300" />
+              <h3 className="font-bold">Human connection</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-400">
+                Digital experiences designed around real people.
+              </p>
+            </div>
+            <div className="glass rounded-3xl p-6">
+              <CheckCircle2 className="mb-5 text-cyan-300" />
+              <h3 className="font-bold">Clear process</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-400">
+                Structured intake from first click to next step.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="container overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-gradient-to-br from-cyan-400/10 via-blue-500/5 to-transparent p-8 md:p-14">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">
+              Let’s connect
+            </p>
+            <h2 className="mt-3 text-4xl font-black md:text-5xl">
+              Have a campaign in mind?
+            </h2>
+            <p className="mt-5 leading-7 text-slate-400">
+              Tell us what you are building, the market you serve, and the kind
+              of customer journey you need.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-8 inline-block rounded-full bg-cyan-300 px-7 py-3.5 font-bold text-slate-950"
+            >
+              Start a conversation
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
